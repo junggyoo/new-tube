@@ -3,7 +3,16 @@
 import { trpc } from "@/trpc/client";
 
 export function PageClient() {
-	const [data] = trpc.hello.useSuspenseQuery({ text: "jungq" });
+	const [data] = trpc.categories.getMany.useSuspenseQuery();
 
-	return <div>Page client says: {data.greeting}</div>;
+	return (
+		<div>
+			<h1>Categories</h1>
+			<ul>
+				{data.map((category) => (
+					<li key={category.id}>{category.name}</li>
+				))}
+			</ul>
+		</div>
+	);
 }
