@@ -93,7 +93,9 @@ function VideosSectionSuspense() {
 				limit: DEFAULT_LIMIT,
 			},
 			{
-				getNextPageParam: (lastPage) => lastPage.nextCursor,
+				getNextPageParam: (lastPage: {
+					nextCursor: { id: string; updatedAt: Date } | null;
+				}) => lastPage.nextCursor,
 			}
 		);
 
