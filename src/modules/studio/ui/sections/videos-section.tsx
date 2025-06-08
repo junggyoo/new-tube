@@ -73,13 +73,13 @@ function VideosSectionSuspense() {
 						)}
 					</TableBody>
 				</Table>
-				<InfiniteScroll
-					isManual
-					hasNextPage={hasNextPage}
-					isFetchingNextPage={isFetchingNextPage}
-					fetchNextPage={fetchNextPage}
-				/>
 			</div>
+			<InfiniteScroll
+				isManual
+				hasNextPage={hasNextPage}
+				isFetchingNextPage={isFetchingNextPage}
+				fetchNextPage={fetchNextPage}
+			/>
 		</div>
 	);
 }
